@@ -1,0 +1,12 @@
+# Astro
+.astro/
+dist/
+
+# Turborepo
+.turbo/
+
+# Vercel
+.vercel/
+
+# SST
+.sst/
