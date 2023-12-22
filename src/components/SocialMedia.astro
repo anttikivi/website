@@ -14,7 +14,7 @@ const locale = getLocaleFromUrl(Astro.url);
 const t = useTranslations(locale);
 ---
 
-<div class:list={['flex gap-4', className]}>
+<div class:list={['flex gap-6', className]}>
   <a
     class="hover:text-red-700 focus:text-red-700 hover:dark:text-red-400 focus:dark:text-red-400"
     href={social.threads.href}
