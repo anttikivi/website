@@ -24,7 +24,12 @@ Building the website equally as easy as running the development server. Just run
 
 ## Licence
 
-The source code in this project is licensed under the Apache-2.0 licence. See the
-[`LICENSE`](LICENSE) file for more information.
+The source code in this project is licensed under the Apache-2.0 licence. See
+the [`LICENSE`](LICENSE) file for more information.
 
-All rights are reserved for the non-code contents in this project and for the SVG files in [`src/components/Logo.astro`](src/components/Logo.astro) and [`public/favicon.svg`](public/favicon.svg). This includes documentation, images, texts that are shown on the website and any other non-code materials. These materials may not be reproduced or distributed in derivative works without explicit permission from the copyright holder.
+All rights are reserved for the non-code contents in this project and for the
+SVG files in [`src/components/Logo.astro`](src/components/Logo.astro) and
+[`public/favicon.svg`](public/favicon.svg). This includes documentation, images,
+texts that are shown on the website and any other non-code materials. These
+materials may not be reproduced or distributed in derivative works without
+explicit permission from the copyright holder.
