@@ -5,6 +5,7 @@ import {
   useTranslations,
 } from '../utils/i18n';
 import Logo from './Logo.astro';
+import SocialMedia from './SocialMedia.astro';
 
 const locale = getLocaleFromUrl(Astro.url);
 const t = useTranslations(locale);
@@ -37,22 +38,25 @@ const termsNavigation = [
       </a>
       <div set:html={t('footer.copyright')} />
     </div>
-    <nav
-      class="mb-6 flex flex-col justify-center text-center sm:mb-0 sm:text-right"
-      aria-label={t('footer.navigation.terms.label')}
-    >
-      {
-        termsNavigation.map((link) => (
-          <div class="my-2 sm:my-0">
-            {/* eslint-disable-next-line jsx-a11y/anchor-has-content */}
-            <a
-              class="text-red-950 hover:underline focus:underline dark:text-red-100"
-              href={link.href}
-              set:text={link.name}
-            />
-          </div>
-        ))
-      }
-    </nav>
+    <div>
+      <SocialMedia class="mb-4 flex flex-row justify-center sm:justify-end" />
+      <nav
+        class="mb-6 flex flex-col justify-center text-center sm:mb-0 sm:text-right"
+        aria-label={t('footer.navigation.terms.label')}
+      >
+        {
+          termsNavigation.map((link) => (
+            <div class="my-2 sm:my-0">
+              {/* eslint-disable-next-line jsx-a11y/anchor-has-content */}
+              <a
+                class="text-red-950 hover:underline focus:underline dark:text-red-100"
+                href={link.href}
+                set:text={link.name}
+              />
+            </div>
+          ))
+        }
+      </nav>
+    </div>
   </div>
 </footer>

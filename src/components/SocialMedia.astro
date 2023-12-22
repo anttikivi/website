@@ -1,0 +1,20 @@
+---
+import { social } from '../data/contact';
+import Threads from './social-icons/Threads.astro';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<div class={className}>
+  <a
+    class="hover:text-red-700 focus:text-red-700 hover:dark:text-red-400 focus:dark:text-red-400"
+    href={social.threads.href}
+    rel="nofollow"
+  >
+    <Threads class="size-8" />
+  </a>
+</div>
