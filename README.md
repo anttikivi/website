@@ -33,3 +33,8 @@ SVG files in [`src/components/Logo.astro`](src/components/Logo.astro) and
 texts that are shown on the website and any other non-code materials. These
 materials may not be reproduced or distributed in derivative works without
 explicit permission from the copyright holder.
+
+The Instagram and Threads logos included within the project belong to Meta
+Platforms, Inc. or its subsidiaries and are not licensed under the Apache-2.0
+license. Instagram and Threads are registered trademarks of Meta Platforms, Inc.
+or its subsidiaries.
