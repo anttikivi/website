@@ -1,0 +1,44 @@
+---
+import { isRouteHome } from '../utils';
+import {
+  getLocaleFromUrl,
+  getRouteFromUrl,
+  useTranslatedPath,
+  useTranslations,
+} from '../utils/i18n';
+
+const locale = getLocaleFromUrl(Astro.url);
+const t = useTranslations(locale);
+const translatePath = useTranslatedPath(locale);
+const currentRoute = getRouteFromUrl(Astro.url);
+
+const isHome = isRouteHome(currentRoute as string);
+const headerTitle = t('navigation.global.title');
+
+const navigation = [
+  { name: t('about.title'), href: translatePath('/minusta') },
+];
+---
+
+<header>
+  <nav
+    class="mx-auto flex max-w-prose items-center justify-between px-4 py-10"
+    aria-label={t('navigation.global.label')}
+  >
+    <a class="text-xl hover:underline focus:underline" href={translatePath('/')}
+      >{isHome ? <h1>{headerTitle}</h1> : headerTitle}</a
+    >
+    <div class="hidden">
+      {
+        navigation.map((link) => (
+          // eslint-disable-next-line jsx-a11y/anchor-has-content
+          <a
+            class="mx-2 text-xl text-red-950 hover:underline focus:underline dark:text-red-100 sm:mx-4"
+            href={link.href}
+            set:text={link.name}
+          />
+        ))
+      }
+    </div>
+  </nav>
+</header>

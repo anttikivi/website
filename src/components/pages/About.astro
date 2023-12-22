@@ -1,0 +1,9 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getLocaleFromUrl, useTranslations } from '../../utils/i18n';
+
+const locale = getLocaleFromUrl(Astro.url);
+const t = useTranslations(locale);
+---
+
+<Layout title={t('about.title')}>Minusta</Layout>
