@@ -36,6 +36,8 @@ const locales = {
       'Antti Kivi. Viestintäasiantuntija, yrittäjä ja ylioppilas.',
     'site.slogan': 'Viestintäasiantuntija',
     'site.title': 'Antti Kivi',
+    'socialMedia.instagramAlt': 'Instagramin logo',
+    'socialMedia.threadsAlt': 'Instagram Threadsin logo',
   },
 } as const;
 

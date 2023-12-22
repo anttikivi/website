@@ -1,5 +1,7 @@
 ---
 import { social } from '../data/contact';
+import { getLocaleFromUrl, useTranslations } from '../utils/i18n';
+import Instagram from './social-icons/Instagram.astro';
 import Threads from './social-icons/Threads.astro';
 
 interface Props {
@@ -7,14 +9,26 @@ interface Props {
 }
 
 const { class: className } = Astro.props;
+
+const locale = getLocaleFromUrl(Astro.url);
+const t = useTranslations(locale);
 ---
 
-<div class={className}>
+<div class:list={['flex gap-4', className]}>
   <a
     class="hover:text-red-700 focus:text-red-700 hover:dark:text-red-400 focus:dark:text-red-400"
     href={social.threads.href}
     rel="nofollow"
   >
+    <span class="sr-only">{t('socialMedia.threadsAlt')}</span>
     <Threads class="size-8" />
+  </a>
+  <a
+    class="hover:text-red-700 focus:text-red-700 hover:dark:text-red-400 focus:dark:text-red-400"
+    href={social.instagram.href}
+    rel="nofollow"
+  >
+    <span class="sr-only">{t('socialMedia.instagramAlt')}</span>
+    <Instagram class="size-8" />
   </a>
 </div>
