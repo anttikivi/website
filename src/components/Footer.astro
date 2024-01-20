@@ -3,18 +3,18 @@ import {
   getLocaleFromUrl,
   useTranslatedPath,
   useTranslations,
-} from '../utils/i18n';
-import Logo from './Logo.astro';
-import SocialMedia from './SocialMedia.astro';
+} from "../utils/i18n";
+import Logo from "./Logo.astro";
+import SocialMedia from "./SocialMedia.astro";
 
 const locale = getLocaleFromUrl(Astro.url);
-const t = useTranslations(locale);
+const t = await useTranslations(locale, "layout");
 const translatePath = useTranslatedPath(locale);
 
 const termsNavigation = [
   {
-    name: t('footer.navigation.terms.dataProtection'),
-    href: translatePath('/tietosuoja'),
+    name: t("footer.navigation.terms.dataProtection"),
+    href: translatePath("/tietosuoja"),
   },
   // {
   //   name: t('footer.navigation.terms.accessibilityStatement'),
@@ -32,17 +32,17 @@ const termsNavigation = [
     >
       <a
         class="text-gray-900 hover:text-red-700 focus:text-red-700 dark:text-gray-100 hover:dark:text-red-400 focus:dark:text-red-400"
-        href={translatePath('/')}
+        href={translatePath("/")}
       >
         <Logo class="h-14 w-14 fill-current" />
       </a>
-      <div set:html={t('footer.copyright')} />
+      <div set:html={t("footer.copyright")} />
     </div>
     <div>
       <SocialMedia class="mb-4 flex flex-row justify-center sm:justify-end" />
       <nav
         class="mb-6 flex flex-col justify-center text-center sm:mb-0 sm:text-right"
-        aria-label={t('footer.navigation.terms.label')}
+        aria-label={t("footer.navigation.terms.label")}
       >
         {
           termsNavigation.map((link) => (

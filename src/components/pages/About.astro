@@ -1,9 +1,9 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import { getLocaleFromUrl, useTranslations } from '../../utils/i18n';
+import Layout from "../../layouts/Layout.astro";
+import { getLocaleFromUrl, useTranslations } from "../../utils/i18n";
 
 const locale = getLocaleFromUrl(Astro.url);
-const t = useTranslations(locale);
+const t = await useTranslations(locale, "about");
 ---
 
-<Layout title={t('about.title')}>Minusta</Layout>
+<Layout title={t("about.title")}>Minusta</Layout>

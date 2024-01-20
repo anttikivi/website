@@ -1,5 +1,5 @@
 ---
-import { getLocaleFromUrl, useTranslations } from '../utils/i18n';
+import { getLocaleFromUrl, useTranslations } from "../utils/i18n";
 
 interface Props {
   class?: string;
@@ -8,11 +8,11 @@ interface Props {
 const { class: className } = Astro.props;
 
 const locale = getLocaleFromUrl(Astro.url);
-const t = useTranslations(locale);
+const t = await useTranslations(locale, "layout");
 ---
 
 <svg class={className} viewBox="0 0 1024 1024" x="0px" y="0px" role="img">
-  <title>{t('logo.alt')}</title>
+  <title>{t("logo.alt")}</title>
   <path
     class="st0"
     d="M593.4,981.9c-7-13.4-13.6-27.2-19.6-41.2c-11.5-26.9-21.2-54.9-28.8-83.3c-4.9-18.3-15-56.4-18.5-107.2

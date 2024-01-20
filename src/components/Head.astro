@@ -1,15 +1,15 @@
 ---
-import type { ImageMetadata } from 'astro';
-import { getImage } from 'astro:assets';
-import locales, { defaultLocale, fullLocales } from '../data/locales';
-import type { Locale } from '../types';
-import { isRouteHome } from '../utils';
+import type { ImageMetadata } from "astro";
+import { getImage } from "astro:assets";
+import type { Locale } from "../types";
+import { isRouteHome } from "../utils";
 import {
   getLocaleFromUrl,
   getRouteFromUrl,
   useTranslatedPath,
   useTranslations,
-} from '../utils/i18n';
+} from "../utils/i18n";
+import locales, { defaultLocale, fullLocales } from "../utils/i18n/config";
 
 interface Props {
   description?: string;
@@ -20,25 +20,25 @@ interface Props {
 
 const { description, image, imageAlt, title } = Astro.props;
 
-const titleSeparator = ' - ';
+const titleSeparator = " - ";
 
 const locale = getLocaleFromUrl(Astro.url);
-const t = useTranslations(locale);
+const t = await useTranslations(locale, "site");
 const translatePath = useTranslatedPath(locale);
 
 const isHome = isRouteHome(Astro.url.pathname);
 
-const siteTitle = t('site.title');
+const siteTitle = t("site.title");
 
 const metaTitle = isHome
   ? `${siteTitle}`
   : `${title}${titleSeparator}${siteTitle}`;
-const metaDescription = description || t('site.description');
+const metaDescription = description || t("site.description");
 
-const metaImageUrl = new URL('/opengraph-image.png', Astro.site);
+const metaImageUrl = new URL("/opengraph-image.png", Astro.site);
 
-metaImageUrl.searchParams.append('title', title);
-metaImageUrl.searchParams.append('description', metaDescription);
+metaImageUrl.searchParams.append("title", title);
+metaImageUrl.searchParams.append("description", metaDescription);
 
 const imageWidth = 1200;
 const imageHeight = 630;
@@ -47,13 +47,13 @@ const metaImage = image
   ? (
       await getImage({
         src: image,
-        format: 'png',
+        format: "png",
         height: imageHeight,
         width: imageWidth,
       })
     ).src
   : metaImageUrl.toString();
-const metaImageAlt = image ? imageAlt : t('site.imageAlt');
+const metaImageAlt = image ? imageAlt : t("site.imageAlt");
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
 const currentRoute = getRouteFromUrl(Astro.url);
@@ -125,7 +125,7 @@ const currentRoute = getRouteFromUrl(Astro.url);
           <link
             href={
               new URL(
-                localeEntry === defaultLocale ? '/' : `${localeEntry}/`,
+                localeEntry === defaultLocale ? "/" : `${localeEntry}/`,
                 Astro.site,
               )
             }
@@ -137,10 +137,7 @@ const currentRoute = getRouteFromUrl(Astro.url);
         <link
           href={
             new URL(
-              translatePath(
-                `/${currentRoute}`,
-                localeEntry as keyof typeof locales,
-              ),
+              translatePath(`/${currentRoute}`, localeEntry as Locale),
               Astro.site,
             )
           }

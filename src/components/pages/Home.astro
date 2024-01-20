@@ -1,17 +1,17 @@
 ---
-import { getEntry } from 'astro:content';
-import socialMediaImage from '../../assets/social-media-image.png';
-import Layout from '../../layouts/Layout.astro';
-import { getLocaleFromUrl, useTranslations } from '../../utils/i18n';
+import { getEntry } from "astro:content";
+import socialMediaImage from "../../assets/social-media-image.png";
+import Layout from "../../layouts/Layout.astro";
+import { getLocaleFromUrl, useTranslations } from "../../utils/i18n";
 
 const locale = getLocaleFromUrl(Astro.url);
-const t = useTranslations(locale);
+const t = await useTranslations(locale, "home");
 
-const preface = await getEntry('home', `${locale}/preface`);
-const { Content: PrefaceContent } = await preface.render();
+const preface = await getEntry("home", `${locale}/preface`);
+const { Content: PrefaceContent } = await preface!.render();
 ---
 
-<Layout image={socialMediaImage} title={t('home.title')}>
+<Layout image={socialMediaImage} title={t("home.title")}>
   <section
     class="prose prose-lg dark:prose-invert hover:prose-a:text-red-700 focus:prose-a:text-red-700 prose-em:ml-0.5 prose-em:font-serif hover:dark:prose-a:text-red-400 focus:dark:prose-a:text-red-400"
   >
