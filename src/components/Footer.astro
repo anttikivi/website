@@ -1,4 +1,5 @@
 ---
+import { getEntry } from "astro:content";
 import {
   getLocaleFromUrl,
   getRouteFromUrl,
@@ -14,16 +15,7 @@ const t = await useTranslations(locale, "layout");
 const translatePath = useTranslatedPath(locale);
 const currentRoute = getRouteFromUrl(Astro.url);
 
-const termsNavigation = [
-  {
-    name: t("footer.navigation.terms.dataProtection"),
-    href: translatePath("/tietosuoja"),
-  },
-  // {
-  //   name: t('footer.navigation.terms.accessibilityStatement'),
-  //   href: translatePath('/saavutettavuusseloste'),
-  // },
-];
+const navigation = await getEntry("navigation", `${locale}/footer`);
 ---
 
 <footer>
@@ -64,16 +56,16 @@ const termsNavigation = [
       <SocialMedia class="mb-4 flex flex-row justify-center sm:justify-end" />
       <nav
         class="mb-6 flex flex-col justify-center text-center sm:mb-0 sm:text-right"
-        aria-label={t("footer.navigation.terms.label")}
+        aria-label={navigation?.data.label}
       >
         {
-          termsNavigation.map((link) => (
+          navigation?.data.links.map((link) => (
             <div class="my-2 sm:my-0">
               {/* eslint-disable-next-line jsx-a11y/anchor-has-content */}
               <a
                 class="text-red-950 hover:underline focus:underline dark:text-red-100"
-                href={link.href}
-                set:text={link.name}
+                href={translatePath(link.href)}
+                set:text={link.label}
               />
             </div>
           ))

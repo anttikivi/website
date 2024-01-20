@@ -1,0 +1,9 @@
+{
+  "label": "Footer navigation",
+  "links": [
+    {
+      "href": "/tietosuoja",
+      "label": "Data protection"
+    }
+  ]
+}
