@@ -1,3 +1,3 @@
 export function isRouteHome(pathname: string) {
-  return pathname === "/"; // TODO: || pathname === '/en' || pathname === '/en/';
+  return pathname === "/" || pathname === "/en" || pathname === "/en/";
 }
