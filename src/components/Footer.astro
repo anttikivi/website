@@ -31,17 +31,19 @@ const termsNavigation = [
     {
       locales
         .filter((localeEntry) => localeEntry !== locale)
-        .map((localeEntry) => (
-          <a
-            class="text-red-950 hover:underline focus:underline dark:text-red-100"
-            href={translatePath(
-              currentRoute === "/" ? "/" : `/${currentRoute}`,
-              localeEntry,
-            )}
-          >
-            {t(`footer.locale.${localeEntry}`)}
-          </a>
-        ))
+        .map((localeEntry) => {
+          return (
+            <a
+              class="text-red-950 hover:underline focus:underline dark:text-red-100"
+              href={translatePath(
+                currentRoute === "/" ? "/" : `/${currentRoute}`,
+                localeEntry,
+              )}
+            >
+              {t(`footer.locale.${localeEntry}`)}
+            </a>
+          );
+        })
     }
   </div>
   <div
