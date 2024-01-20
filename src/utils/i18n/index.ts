@@ -6,7 +6,7 @@ import routes from "./routes";
 export function getLocaleFromUrl(url: URL): Locale {
   const [, locale] = url.pathname.split("/");
 
-  if (locale in locales) {
+  if (locales.includes(locale as Locale)) {
     return locale as Locale;
   }
 
@@ -21,7 +21,6 @@ export async function useTranslations(
     "translations",
     `${locale}/${collection}`,
   );
-  console.log("translations", translations);
   return function t(key: string): string {
     // return locales[locale][key] || locales[defaultLocale][key];
     return translations?.data[key] || key;

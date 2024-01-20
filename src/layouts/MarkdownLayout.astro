@@ -1,9 +1,9 @@
 ---
-import type { ImageMetadata, MarkdownLayoutProps } from 'astro';
-import Footer from '../components/Footer.astro';
-import Head from '../components/Head.astro';
-import Header from '../components/Header.astro';
-import { getLocaleFromUrl, useTranslations } from '../utils/i18n';
+import type { ImageMetadata, MarkdownLayoutProps } from "astro";
+import Footer from "../components/Footer.astro";
+import Head from "../components/Head.astro";
+import Header from "../components/Header.astro";
+import { getLocaleFromUrl, useTranslations } from "../utils/i18n";
 
 type Props = MarkdownLayoutProps<{
   image?: ImageMetadata;
@@ -14,7 +14,7 @@ type Props = MarkdownLayoutProps<{
 const { frontmatter } = Astro.props;
 
 const locale = getLocaleFromUrl(Astro.url);
-const t = useTranslations(locale);
+const t = await useTranslations(locale, "layout");
 ---
 
 <html lang={locale}>
@@ -26,11 +26,11 @@ const t = useTranslations(locale);
   <body
     class="bg-gray-100 font-sans text-gray-900 subpixel-antialiased dark:bg-gray-900 dark:text-gray-100 dark:antialiased"
   >
-    <a class="sr-only focus:not-sr-only" href={`#${t('layout.main')}`}
-      >{t('layout.skipToContent')}</a
+    <a class="sr-only focus:not-sr-only" href={`#${t("layout.main")}`}
+      >{t("layout.skipToContent")}</a
     >
     <Header />
-    <main class="mx-auto max-w-prose px-4 py-10" id={t('layout.main')}>
+    <main class="mx-auto max-w-prose px-4 py-10" id={t("layout.main")}>
       <div
         class="prose prose-lg dark:prose-invert prose-headings:font-normal prose-h1:text-2xl prose-h2:text-xl hover:prose-a:text-red-700 focus:prose-a:text-red-700 hover:dark:prose-a:text-red-400 focus:dark:prose-a:text-red-400"
       >
