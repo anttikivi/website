@@ -1,11 +1,21 @@
 ---
+import type { ImageMetadata } from "astro";
 import { getEntry } from "astro:content";
-import socialMediaImage from "../../assets/social-media-image.png";
+import socialMediaImageEn from "../../assets/social-media-image-en.png";
+import socialMediaImageFi from "../../assets/social-media-image-fi.png";
 import Layout from "../../layouts/Layout.astro";
 import { getLocaleFromUrl, useTranslations } from "../../utils/i18n";
 
 const locale = getLocaleFromUrl(Astro.url);
 const t = await useTranslations(locale, "home");
+
+let socialMediaImage: ImageMetadata;
+
+if (locale === "en") {
+  socialMediaImage = socialMediaImageEn;
+} else {
+  socialMediaImage = socialMediaImageFi;
+}
 
 const preface = await getEntry("home", `${locale}/preface`);
 const { Content: PrefaceContent } = await preface!.render();
