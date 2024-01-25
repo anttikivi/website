@@ -42,6 +42,7 @@ const config = {
     fontFamily: {
       sans: ["articulat-cf", ...defaultTheme.fontFamily.sans],
       serif: ["miller-text", ...defaultTheme.fontFamily.serif],
+      mono: ["ibm-plex-mono", ...defaultTheme.fontFamily.mono],
     },
     extend: {
       typography: ({ theme }) => ({
