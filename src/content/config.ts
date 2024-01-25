@@ -1,5 +1,10 @@
 import { defineCollection, z } from "astro:content";
 
+const error = defineCollection({
+  type: "content",
+  schema: z.object({ title: z.string() }),
+});
+
 const home = defineCollection({
   type: "content",
   schema: z.object({ title: z.string() }),
@@ -23,4 +28,4 @@ const translations = defineCollection({
   schema: z.record(z.string(), z.string()),
 });
 
-export const collections = { home, navigation, translations };
+export const collections = { error, home, navigation, translations };
