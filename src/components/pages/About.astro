@@ -1,9 +1,0 @@
----
-import Layout from "../../layouts/Layout.astro";
-import { getLocaleFromUrl, useTranslations } from "../../utils/i18n";
-
-const locale = getLocaleFromUrl(Astro.url);
-const t = await useTranslations(locale, "about");
----
-
-<Layout title={t("about.title")}>Minusta</Layout>
