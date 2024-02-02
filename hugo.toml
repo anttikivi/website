@@ -5,6 +5,8 @@ disableHugoGeneratorInject = true
 title = "Antti Kivi"
 
 [params]
+  author = "Antti Kivi"
+  copyrightYear = 2024
   images = ["opengraph-image.png"]
   title = "Antti Kivi"
 
