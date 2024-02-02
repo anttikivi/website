@@ -50,7 +50,7 @@ jobs:
           cache: "npm"
 
       - name: Install Cargo dependencies
-        run: cargo install taplo --locked
+        run: cargo install taplo-cli --locked
 
       - name: Cache the Cargo dependencies
         uses: actions/cache@v4.0.0
