@@ -1,6 +1,18 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+{{ block "title" . }}
+  {{- if .IsHome -}}
+    <title>
+      {{- printf "%s - %s" $.Site.Title $.Site.Params.Subtitle -}}
+    </title>
+  {{- else -}}
+    <title>
+      {{- printf "%s - %s" .Title $.Site.Title -}}
+    </title>
+  {{- end -}}
+{{ end }}
+
 {{ $description := .Summary | plainify }}
 {{ if .IsHome }}
   {{ $description = $.Site.Params.description }}
@@ -23,6 +35,14 @@
 <link href="{{ $appleTouchIcon }}" rel="apple-touch-icon" sizes="180x180" />
 
 <link href="{{ .Permalink }}" rel="canonical" />
+
+{{ range .AllTranslations }}
+  <link
+    href="{{ .Permalink }}"
+    hreflang="{{ .Language.Lang }}"
+    rel="alternate"
+  />
+{{ end }}
 
 {{ template "_internal/opengraph.html" . }}
 

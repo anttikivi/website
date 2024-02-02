@@ -1,17 +1,6 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{- .Site.Language.Lang -}}">
   <head>
-    {{ block "title" . }}
-      {{- if .IsHome -}}
-        <title>
-          {{- printf "%s - %s" $.Site.Title $.Site.Params.Subtitle -}}
-        </title>
-      {{- else -}}
-        <title>
-          {{- printf "%s - %s" .Title $.Site.Title -}}
-        </title>
-      {{- end -}}
-    {{ end }}
     {{ partial "head.html" . }}
     {{ block "head" . }}{{ end }}
   </head>
@@ -20,7 +9,7 @@
   >
     {{ $main := T "main-id" }}
     <a class="sr-only focus:not-sr-only" href="{{ $main }}">
-      {{ T "skip-to-content" }}
+      {{- T "skip-to-content" -}}
     </a>
     <main class="mx-auto max-w-prose px-4 py-10" id="{{ $main }}">
       {{ block "main" . }}{{ end }}
