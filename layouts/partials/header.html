@@ -1,0 +1,13 @@
+<header>
+  <div class="mx-auto flex max-w-prose items-center justify-between px-4 py-10">
+    {{ $homeUrl := relLangURL "" }}
+    <a class="text-xl hover:underline focus:underline" href="{{ $homeUrl }}">
+      {{- if .IsHome -}}
+        <h1>{{- .Site.Title -}}</h1>
+      {{- else -}}
+        {{- .Site.Title -}}
+      {{- end -}}
+    </a>
+    <div class="hidden"></div>
+  </div>
+</header>
