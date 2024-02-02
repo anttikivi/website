@@ -1,0 +1,21 @@
+<footer>
+  {{ if .IsTranslated }}
+    {{ $languageMenuLabel := T "languageMenuLabel" . }}
+    <ul
+      class="my-12 flex flex-col items-center md:my-8"
+      role="menu"
+      aria-label="{{ $languageMenuLabel }}"
+    >
+      {{ range .Translations }}
+        <li lang="{{ .Language.LanguageCode }}" role="menuitem">
+          <a
+            class="text-red-950 hover:underline focus:underline dark:text-red-100"
+            href="{{ .RelPermalink }}"
+          >
+            {{- .Language.Params.SwitchTo -}}
+          </a>
+        </li>
+      {{ end }}
+    </ul>
+  {{ end }}
+</footer>

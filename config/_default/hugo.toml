@@ -13,18 +13,22 @@ title = "Antti Kivi"
     disabled = false
     # languageCode = "fi-FI"
     languageCode = "fi"
+    languageName = "suomi"
     weight = 1
     [languages.fi.params]
       description = "Viestintäasiantuntija, yrittäjä ja ylioppilas."
       subtitle = "Viestintäasiantuntija"
+      switchTo = "Suomeksi"
 [languages.en]
   disabled = false
   # languageCode = "en-GB"
   languageCode = "en"
+  languageName = "English"
   weight = 2
   [languages.en.params]
     description = "Communications adviser, entrepreneur and student."
     subtitle = "Communications adviser"
+    switchTo = "In English"
 
 [module]
   [module.hugoVersion]
@@ -33,6 +37,15 @@ title = "Antti Kivi"
   [[module.mounts]]
     source = "assets"
     target = "assets"
+  [[module.mounts]]
+    source = "content"
+    target = "content"
+  [[module.mounts]]
+    source = "layouts"
+    target = "layouts"
+  [[module.mounts]]
+    source = "static"
+    target = "static"
   [[module.mounts]]
     source = "hugo_stats.json"
     target = "assets/watching/hugo_stats.json"
