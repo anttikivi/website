@@ -4,6 +4,7 @@ defaultContentLanguage = "fi"
 defaultContentLanguageInSubdir = false
 disableHugoGeneratorInject = true
 disableKinds = ["RSS", "taxonomy"]
+enableRobotsTXT = true
 title = "Antti Kivi"
 
 [params]
