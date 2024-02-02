@@ -1,12 +1,29 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{{ block "title" . }}{{ end }}</title>
-    <link href="css/style.css" rel="stylesheet" />
+    {{ block "title" . }}
+      {{- if .IsHome -}}
+        <title>
+          {{- printf "%s - %s" $.Site.Title $.Site.Params.Subtitle -}}
+        </title>
+      {{- else -}}
+        <title>
+          {{- printf "%s - %s" .Title $.Site.Title -}}
+        </title>
+      {{- end -}}
+    {{ end }}
+    {{ partial "head.html" . }}
+    {{ block "head" . }}{{ end }}
   </head>
-  <body>
-    {{ block "main" . }}{{ end }}
+  <body
+    class="bg-gray-100 font-sans text-gray-900 subpixel-antialiased dark:bg-gray-900 dark:text-gray-100 dark:antialiased"
+  >
+    {{ $main := T "main-id" }}
+    <a class="sr-only focus:not-sr-only" href="{{ $main }}">
+      {{ T "skip-to-content" }}
+    </a>
+    <main class="mx-auto max-w-prose px-4 py-10" id="{{ $main }}">
+      {{ block "main" . }}{{ end }}
+    </main>
   </body>
 </html>

@@ -1,3 +1,37 @@
-baseURL = 'https://www.anttikivi.fi'
-languageCode = 'en-us'
-title = 'Antti Kivi'
+baseURL = "https://www.anttikivi.fi"
+defaultContentLanguage = "fi"
+defaultContentLanguageInSubdir = false
+title = "Antti Kivi"
+
+[params]
+  description = "Viestintäasiantuntija, yrittäjä ja ylioppilas."
+  images = ["opengraph-image.png"]
+  subtitle = "Viestintäasiantuntija"
+  title = "Antti Kivi"
+
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = "0.121.0"
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+  [[module.mounts]]
+    source = "hugo_stats.json"
+    target = "assets/watching/hugo_stats.json"
+
+[build]
+  [build.buildStats]
+    enable = true
+  [[build.cachebusters]]
+    source = 'assets/watching/hugo_stats\.json'
+    target = 'styles\.css'
+  [[build.cachebusters]]
+    source = '(postcss|tailwind)\.config\.js'
+    target = 'css'
+  [[build.cachebusters]]
+    source = 'assets/.*\.(js|ts|jsx|tsx)'
+    target = 'js'
+  [[build.cachebusters]]
+    source = 'assets/.*\.(.*)$'
+    target = '$1'
