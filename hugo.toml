@@ -3,6 +3,7 @@ copyright = "© 2024 Antti Kivi"
 defaultContentLanguage = "fi"
 defaultContentLanguageInSubdir = false
 disableHugoGeneratorInject = true
+disableKinds = ["RSS", "taxonomy"]
 title = "Antti Kivi"
 
 [params]
