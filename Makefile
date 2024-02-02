@@ -14,5 +14,5 @@ fmt:
 lint:
 	@printf "\nLinting...\n\n"
 	npx prettier --check "**/*.{html,js?(on),md,yml}"
-	taplo fmt --config taplo.toml --check "**/*.toml"
+	taplo fmt --check "**/*.toml"
 	taplo check "**/*.toml"
