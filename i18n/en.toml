@@ -1,5 +1,5 @@
-main-id = "main"
-skip-to-content = "Skip to content"
+mainID = "main"
+skipToContent = "Skip to content"
 
 [languageMenuLabel]
   other = "The current language is {{ .Language.LanguageName }}. Choose your preferred language."

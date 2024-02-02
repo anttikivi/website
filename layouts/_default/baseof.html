@@ -7,9 +7,9 @@
   <body
     class="bg-gray-100 font-sans text-gray-900 subpixel-antialiased dark:bg-gray-900 dark:text-gray-100 dark:antialiased"
   >
-    {{ $main := T "main-id" }}
+    {{ $main := T "mainID" }}
     <a class="sr-only focus:not-sr-only" href="{{ $main }}">
-      {{- T "skip-to-content" -}}
+      {{- T "skipToContent" -}}
     </a>
     {{ partial "header.html" . }}
     <main class="mx-auto max-w-prose px-4 py-10" id="{{ $main }}">
