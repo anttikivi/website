@@ -9,6 +9,9 @@ title = "Antti Kivi"
   copyrightYear = 2024
   images = ["opengraph-image.png"]
   title = "Antti Kivi"
+[params.socialMedia]
+  instagramLink = "https://www.instagram.com/anttikiwi/"
+  threadsLink = "https://www.threads.net/@anttikiwi"
 
 [languages]
 
