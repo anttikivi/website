@@ -31,11 +31,7 @@
       >
         {{ partial "icons/footer-logo.html" . }}
       </a>
-      <span
-        >&copy;
-        {{ .Language.Params.CopyrightYear }}
-        {{ .Language.Params.Author -}}
-      </span>
+      <span>{{- .Site.Copyright | safeHTML -}}</span>
     </div>
     <div>
       {{ partial "footer-social-media.html" . }}
