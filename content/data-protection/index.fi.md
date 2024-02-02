@@ -1,4 +1,5 @@
 +++
+menu = ["terms"]
 slug = "tietosuoja"
 title = "Tietosuoja"
 +++

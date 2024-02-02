@@ -1,4 +1,5 @@
 +++
+menu = ["terms"]
 slug = "data-protection"
 title = "Data protection"
 +++
