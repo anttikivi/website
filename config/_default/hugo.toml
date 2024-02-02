@@ -1,0 +1,54 @@
+baseURL = "https://www.anttikivi.fi"
+defaultContentLanguage = "fi"
+defaultContentLanguageInSubdir = false
+disableHugoGeneratorInject = true
+title = "Antti Kivi"
+
+[params]
+  images = ["opengraph-image.png"]
+  title = "Antti Kivi"
+
+[languages]
+  [languages.fi]
+    disabled = false
+    # languageCode = "fi-FI"
+    languageCode = "fi"
+    weight = 1
+    [languages.fi.params]
+      description = "Viestintäasiantuntija, yrittäjä ja ylioppilas."
+      subtitle = "Viestintäasiantuntija"
+[languages.en]
+  disabled = false
+  # languageCode = "en-GB"
+  languageCode = "en"
+  weight = 2
+  [languages.en.params]
+    description = "Communications adviser, entrepreneur and student."
+    subtitle = "Communications adviser"
+
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = "0.121.0"
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+  [[module.mounts]]
+    source = "hugo_stats.json"
+    target = "assets/watching/hugo_stats.json"
+
+[build]
+  [build.buildStats]
+    enable = true
+  [[build.cachebusters]]
+    source = "assets/watching/hugo_stats\\.json"
+    target = "styles\\.css"
+  [[build.cachebusters]]
+    source = "(postcss|tailwind)\\.config\\.js"
+    target = "css"
+  [[build.cachebusters]]
+    source = "assets/.*\\.(js|ts|jsx|tsx)"
+    target = "js"
+  [[build.cachebusters]]
+    source = "assets/.*\\.(.*)$"
+    target = "$1"
