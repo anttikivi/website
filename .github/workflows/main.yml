@@ -17,6 +17,9 @@ jobs:
       - name: Check out the repository
         uses: actions/checkout@v4.1.1
 
+      - name: Install Hugo
+        run: sudo apt install hugo
+
       - name: Set up Node.js environment
         uses: actions/setup-node@v4.0.0
         with:
@@ -42,6 +45,9 @@ jobs:
     steps:
       - name: Check out the repository
         uses: actions/checkout@v4.1.1
+
+      - name: Install Hugo
+        run: sudo apt install hugo
 
       - name: Set up Node.js environment
         uses: actions/setup-node@v4.0.0
