@@ -1,0 +1,52 @@
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+{{ block "title" . }}
+  {{- if .IsHome -}}
+    <title>
+      {{- printf "%s - %s" $.Site.Title $.Site.Params.Subtitle -}}
+    </title>
+  {{- else -}}
+    <title>
+      {{- printf "%s - %s" .Title $.Site.Title -}}
+    </title>
+  {{- end -}}
+{{ end }}
+
+{{ $description := .Summary | plainify }}
+{{ if .IsHome }}
+  {{ $description = $.Site.Params.description }}
+{{ else if isset .Params "description" }}
+  {{ $description = .Params.description }}
+{{ end }}
+<meta name="description" content="{{ $description }}" />
+
+{{ partial "style.html" . }}
+
+{{ $favicon := relURL "favicon.svg" }}
+{{ $faviconIco := relURL "favicon.ico" }}
+{{ $favicon32 := relURL "favicon-32x32.png" }}
+{{ $favicon16 := relURL "favicon-16x16.png" }}
+{{ $appleTouchIcon := relURL "apple-touch-icon.png" }}
+<link href="{{ $favicon }}" rel="icon" type="image/svg+xml" />
+<link href="{{ $faviconIco }}" rel="alternate icon" sizes="16x16" />
+<link href="{{ $favicon32 }}" rel="icon" sizes="32x32" type="image/png" />
+<link href="{{ $favicon16 }}" rel="icon" sizes="16x16" type="image/png" />
+<link href="{{ $appleTouchIcon }}" rel="apple-touch-icon" sizes="180x180" />
+
+<link href="{{ .Permalink }}" rel="canonical" />
+
+{{ range .AllTranslations }}
+  <link
+    href="{{ .Permalink }}"
+    hreflang="{{ .Language.Lang }}"
+    rel="alternate"
+  />
+{{ end }}
+
+{{ template "_internal/opengraph.html" . }}
+
+{{/* TODO: Add alternative locales */}}
+
+{{ partial "fonts.html" }}
+{{ partial "analytics.html" }}

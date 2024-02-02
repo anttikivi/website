@@ -2,9 +2,9 @@ import typographyPlugin from "@tailwindcss/typography";
 import colors from "tailwindcss/colors";
 import defaultTheme from "tailwindcss/defaultTheme";
 
-/** @type {import('tailwindcss').Config} */
+/** @type {import("tailwindcss").Config} */
 const config = {
-  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+  content: ["./hugo_stats.json"],
   theme: {
     colors: {
       current: "currentColor",

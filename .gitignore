@@ -1,20 +1,13 @@
-# build output
-dist/
-# generated types
-.astro/
+# Build output
+public/
+resources/
 
-# dependencies
+# Generated files
+assets/jsconfig.json
+hugo_stats.json
+
+# Build lock file
+.hugo_build.lock
+
+# Node modules
 node_modules/
-
-# logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-
-# environment variables
-.env
-.env.production
-
-# macOS-specific files
-.DS_Store

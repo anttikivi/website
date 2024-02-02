@@ -1,11 +1,10 @@
-/** @type {import('prettier').Config} */
+/** @type {import("prettier").Config} */
 const config = {
   plugins: [
     "prettier-plugin-packagejson",
-    "prettier-plugin-astro",
     "prettier-plugin-organize-imports",
+    "prettier-plugin-go-template",
     "prettier-plugin-tailwindcss",
-    "prettier-plugin-astro-organize-imports",
   ],
   arrowParens: "always",
   bracketSpacing: true,
@@ -16,12 +15,11 @@ const config = {
   trailingComma: "all",
   useTabs: false,
   proseWrap: "always",
-  htmlWhitespaceSensitivity: "css",
   overrides: [
     {
-      files: "*.astro",
+      files: ["*.html"],
       options: {
-        parser: "astro",
+        parser: "go-template",
       },
     },
   ],

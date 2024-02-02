@@ -1,12 +1,3 @@
-# Astro
-.astro/
-dist/
+public/
 
-# Turborepo
-.turbo/
-
-# Vercel
-.vercel/
-
-# SST
-.sst/
+package-lock.json
