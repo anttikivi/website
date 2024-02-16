@@ -4,6 +4,8 @@
 
 {{ if hugo.IsProduction }}
   {{ $styles = $styles | minify | fingerprint | resources.PostProcess }}
+{{ else }}
+  {{ $styles = $styles | resources.PostProcess }}
 {{ end }}
 
 
