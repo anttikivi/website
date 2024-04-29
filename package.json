@@ -13,7 +13,7 @@
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.10",
     "autoprefixer": "^10.4.17",
-    "cssnano": "^6.0.3",
+    "cssnano": "^7.0.1",
     "postcss": "^8.4.33",
     "postcss-cli": "^11.0.0",
     "prettier": "^3.2.5",
