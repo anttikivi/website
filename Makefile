@@ -1,18 +1,34 @@
+CURRENT_BRANCH := $(shell git rev-parse --abbrev-ref HEAD)
+
+.PHONY: all build clean dev fmt lint
+
+all: clean build
+
 build:
-	hugo
+	@echo "Building the site..."
+ifeq ($(CURRENT_BRANCH), main)
+	@echo "The environment is set to production."
+	hugo --environment production
+else
+	@echo "The environment is set to staging."
+	hugo --environment staging
+endif
+
+clean:
+	@echo "Cleaning up..."
+	rm -f hugo_stats.json
+	rm -rf public
 
 dev:
-	hugo server -D
+	hugo server --buildDrafts --disableFastRender
 
 fmt:
-	npx prettier --write "**/*.{html,js?(on),md,yml}"
+	npm run prettier -- --write "**/*.{html,js?(on),ts,md,yml}"
 	taplo fmt "**/*.toml"
 
 lint:
-	npx prettier --check "**/*.{html,js?(on),md,yml}"
+	npm run prettier -- --check "**/*.{html,js?(on),md,yml}"
+	npm run stylelint "assets/**/*.css"
+	# npm run eslint .
 	taplo fmt --check "**/*.toml"
 	taplo check "**/*.toml"
-
-clean:
-	rm -f hugo_stats.json
-	rm -rf public

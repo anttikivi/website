@@ -1,25 +1,35 @@
 {
-  "name": "website",
+  "name": "@anttikivi/website",
   "version": "0.0.0",
   "private": true,
-  "description": "Antti Kivi's personal website",
-  "homepage": "https://github.com/anttikivi/website",
+  "description": "Antti Kivi's website",
+  "homepage": "https://github.com/anttikivi/website#readme",
   "bugs": {
     "url": "https://github.com/anttikivi/website/issues"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anttikivi/website.git"
+  },
   "license": "Apache-2.0",
-  "author": "Antti Kivi <antti.kivi@visiosto.fi> (https://www.anttikivi.fi)",
+  "author": "Antti Kivi <antti@anttikivi.fi> (https://www.anttikivi.fi)",
   "type": "module",
+  "scripts": {
+    "prettier": "prettier",
+    "stylelint": "stylelint"
+  },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.10",
-    "autoprefixer": "^10.4.17",
-    "cssnano": "^6.0.3",
-    "postcss": "^8.4.33",
+    "@tailwindcss/typography": "^0.5.13",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
     "postcss-cli": "^11.0.0",
-    "prettier": "^3.2.5",
+    "prettier": "^3.3.2",
     "prettier-plugin-go-template": "^0.0.15",
     "prettier-plugin-organize-imports": "^3.2.4",
-    "prettier-plugin-packagejson": "^2.4.10",
-    "prettier-plugin-tailwindcss": "^0.5.11"
+    "prettier-plugin-packagejson": "^2.5.0",
+    "prettier-plugin-tailwindcss": "^0.6.5",
+    "stylelint": "^16.6.1",
+    "stylelint-config-standard": "^36.0.1",
+    "tailwindcss": "^3.4.4"
   }
 }

@@ -1,0 +1,5 @@
+baseURL = "https://www.anttikivi.fi"
+enableMissingTranslationPlaceholders = true
+
+[minify]
+  minifyOutput = false

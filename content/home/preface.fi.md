@@ -1,5 +1,4 @@
 +++
-title = "Etusivu"
 +++
 
 Hei, olen _Antti Kivi_.

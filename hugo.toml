@@ -1,15 +1,18 @@
-baseURL = "https://www.anttikivi.fi"
+baseURL = 'https://www.anttikivi.fi/'
 copyright = "© 2024 Antti Kivi"
 defaultContentLanguage = "fi"
 defaultContentLanguageInSubdir = false
 disableHugoGeneratorInject = true
 disableKinds = ["RSS", "taxonomy"]
+enableMissingTranslationPlaceholders = true
 enableRobotsTXT = true
-title = "Antti Kivi"
+title = 'Antti Kivi'
 
 [params]
   images = ["opengraph-image.png"]
   title = "Antti Kivi"
+[params.contact]
+  email = "antti@anttikivi.fi"
 [params.socialMedia]
   instagramLink = "https://www.instagram.com/anttikiwi/"
   threadsLink = "https://www.threads.net/@anttikiwi"
@@ -18,13 +21,13 @@ title = "Antti Kivi"
 
 [languages.en]
   disabled = false
-  # languageCode = "en-GB"
+  # languageCode = "en-US"
   languageCode = "en"
   languageName = "English"
   weight = 2
 [languages.en.params]
-  description = "Communications adviser, entrepreneur and student."
-  subtitle = "Communications adviser"
+  description = "Communications advisor, entrepreneur, and student"
+  subtitle = "Communications advisor"
   switchTo = "In English"
 
 [languages.fi]
@@ -34,14 +37,15 @@ title = "Antti Kivi"
   languageName = "suomi"
   weight = 1
 [languages.fi.params]
-  description = "Viestintäasiantuntija, yrittäjä ja ylioppilas."
+  description = "Viestintäasiantuntija, yrittäjä ja ylioppilas"
+  images = []
   subtitle = "Viestintäasiantuntija"
   switchTo = "Suomeksi"
 
 [module]
 [module.hugoVersion]
   extended = true
-  min = "0.121.0"
+  min = "0.123.0"
 [[module.mounts]]
   source = "assets"
   target = "assets"
@@ -59,11 +63,12 @@ title = "Antti Kivi"
   target = "assets/watching/hugo_stats.json"
 
 [build]
+  noJSConfigInAssets = true
 [build.buildStats]
   enable = true
 [[build.cachebusters]]
   source = "assets/watching/hugo_stats\\.json"
-  target = "styles\\.css"
+  target = "main\\.css"
 [[build.cachebusters]]
   source = "(postcss|tailwind)\\.config\\.js"
   target = "css"

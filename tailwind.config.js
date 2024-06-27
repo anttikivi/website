@@ -2,8 +2,8 @@ import typographyPlugin from "@tailwindcss/typography";
 import colors from "tailwindcss/colors";
 import defaultTheme from "tailwindcss/defaultTheme";
 
-/** @type {import("tailwindcss").Config} */
-const config = {
+/** @type {import('tailwindcss').Config} */
+export default {
   content: ["./hugo_stats.json"],
   theme: {
     colors: {
@@ -41,7 +41,7 @@ const config = {
     },
     fontFamily: {
       sans: ['"Open Sans"', ...defaultTheme.fontFamily.sans],
-      serif: ['"Playfair Display"', ...defaultTheme.fontFamily.serif],
+      serif: ['"Libre Baskerville"', ...defaultTheme.fontFamily.serif],
       display: ['"Manrope"', ...defaultTheme.fontFamily.sans],
       mono: ['"IBM Plex Mono"', ...defaultTheme.fontFamily.mono],
     },
@@ -89,5 +89,3 @@ const config = {
   },
   plugins: [typographyPlugin],
 };
-
-export default config;

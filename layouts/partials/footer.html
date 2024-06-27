@@ -29,26 +29,45 @@
         class="text-gray-900 hover:text-red-700 focus:text-red-700 dark:text-gray-100 hover:dark:text-red-400 focus:dark:text-red-400"
         href="{{ $homeURL }}"
       >
-        {{ partial "icons/footer-logo.html" . }}
+        {{ partial "logo/logo.html" . }}
       </a>
       <span>{{- .Site.Copyright -}}</span>
     </div>
     <div>
-      {{ partial "footer-social-media.html" . }}
-      <nav
-        class="mb-6 flex flex-col justify-center text-center sm:mb-0 sm:text-right"
-      >
-        {{- range .Site.Menus.terms -}}
-          <div class="my-2 sm:my-0">
-            <a
-              class="text-red-950 hover:underline focus:underline dark:text-red-100"
-              href="{{ .URL }}"
-            >
-              {{- .Name -}}
-            </a>
-          </div>
-        {{- end -}}
-      </nav>
+      <div class="flex flex-row justify-center gap-6 sm:justify-end">
+        <a
+          class="hover:text-red-700 focus:text-red-700 hover:dark:text-red-400 focus:dark:text-red-400"
+          href="{{ .Site.Params.SocialMedia.ThreadsLink }}"
+          rel="nofollow"
+        >
+          <span class="sr-only">{{- T "threadsLogoAlt" -}}</span>
+          {{ partial "icons/threads-logo.html" }}
+        </a>
+        <a
+          class="hover:text-red-700 focus:text-red-700 hover:dark:text-red-400 focus:dark:text-red-400"
+          href="{{ .Site.Params.SocialMedia.InstagramLink }}"
+          rel="nofollow"
+        >
+          <span class="sr-only">{{- T "instagramLogoAlt" -}}</span>
+          {{ partial "icons/instagram-logo.html" }}
+        </a>
+      </div>
+      {{ if false }}
+        <nav
+          class="mb-6 flex flex-col justify-center text-center sm:mb-0 sm:text-right"
+        >
+          {{- range .Site.Menus.terms -}}
+            <div class="my-2 sm:my-0">
+              <a
+                class="text-red-950 hover:underline focus:underline dark:text-red-100"
+                href="{{ .URL }}"
+              >
+                {{- .Name -}}
+              </a>
+            </div>
+          {{- end -}}
+        </nav>
+      {{ end }}
     </div>
   </div>
 </footer>
