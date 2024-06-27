@@ -26,8 +26,8 @@ title = 'Antti Kivi'
   languageName = "English"
   weight = 2
 [languages.en.params]
-  description = "Communications adviser, entrepreneur and student"
-  subtitle = "Communications adviser"
+  description = "Communications advisor, entrepreneur, and student"
+  subtitle = "Communications advisor"
   switchTo = "In English"
 
 [languages.fi]
