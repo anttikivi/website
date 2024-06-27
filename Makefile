@@ -14,4 +14,5 @@ lint:
 	taplo check "**/*.toml"
 
 clean:
+	rm -f hugo_stats.json
 	rm -rf public
