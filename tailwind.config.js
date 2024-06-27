@@ -41,7 +41,7 @@ export default {
     },
     fontFamily: {
       sans: ['"Open Sans"', ...defaultTheme.fontFamily.sans],
-      serif: ['"Playfair Display"', ...defaultTheme.fontFamily.serif],
+      serif: ['"Libre Baskerville"', ...defaultTheme.fontFamily.serif],
       display: ['"Manrope"', ...defaultTheme.fontFamily.sans],
       mono: ['"IBM Plex Mono"', ...defaultTheme.fontFamily.mono],
     },
