@@ -11,7 +11,7 @@
     <a class="sr-only focus:not-sr-only" href="{{ $main }}">
       {{- T "skipToContent" -}}
     </a>
-    {{/* partial "header.html" . */}}
+    {{ partial "header.html" . }}
     <main class="mx-auto max-w-prose px-4 py-10" id="{{ $main }}">
       {{ block "main" . }}{{ end }}
     </main>
