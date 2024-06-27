@@ -40,9 +40,10 @@ const config = {
       },
     },
     fontFamily: {
-      sans: ["articulat-cf", ...defaultTheme.fontFamily.sans],
-      serif: ["miller-text", ...defaultTheme.fontFamily.serif],
-      mono: ["ibm-plex-mono", ...defaultTheme.fontFamily.mono],
+      sans: ['"Open Sans"', ...defaultTheme.fontFamily.sans],
+      serif: ['"Playfair Display"', ...defaultTheme.fontFamily.serif],
+      display: ['"Manrope"', ...defaultTheme.fontFamily.sans],
+      mono: ['"IBM Plex Mono"', ...defaultTheme.fontFamily.mono],
     },
     extend: {
       typography: ({ theme }) => ({
