@@ -1,22 +1,27 @@
 {
   "name": "@anttikivi/website",
   "version": "0.0.0",
-  "description": "Antti Kivi's website",
-  "type": "module",
   "private": true,
-  "dependencies": {},
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "description": "Antti Kivi's website",
+  "homepage": "https://github.com/anttikivi/website#readme",
+  "bugs": {
+    "url": "https://github.com/anttikivi/website/issues"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/anttikivi/website.git"
   },
-  "author": "Antti Kivi <antti@anttikivi.fi> (https://www.anttikivi.fi)",
   "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/anttikivi/website/issues"
+  "author": "Antti Kivi <antti@anttikivi.fi> (https://www.anttikivi.fi)",
+  "type": "module",
+  "scripts": {
+    "prettier": "prettier"
   },
-  "homepage": "https://github.com/anttikivi/website#readme"
+  "devDependencies": {
+    "prettier": "^3.3.2",
+    "prettier-plugin-go-template": "^0.0.15",
+    "prettier-plugin-organize-imports": "^3.2.4",
+    "prettier-plugin-packagejson": "^2.5.0",
+    "prettier-plugin-tailwindcss": "^0.6.5"
+  }
 }

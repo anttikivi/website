@@ -11,7 +11,8 @@ This repository requires [Node.js](https://nodejs.org) 18 or newer. It uses
 [`npm`](https://www.npmjs.com) as a package manager. `npm` comes bundled with
 Node.js.
 
-You also need [Hugo](https://gohugo.io). The minimum version required is 0.123.0.
+You also need [Hugo](https://gohugo.io). The minimum version required is
+0.123.0.
 
 You also need to be able to use `make` to run the repository’s scripts. The
 scripts are in the [`Makefile`](/Makefile).
