@@ -73,3 +73,6 @@ The Instagram and Threads logos included within the project belong to Meta
 Platforms, Inc. or its subsidiaries and are not licensed under the Apache-2.0
 license. Instagram and Threads are registered trademarks of Meta Platforms, Inc.
 or its subsidiaries.
+
+The GitHub logo included within the project belongs to GitHub, Inc. or its
+subsidiaries and is not licensed under the Apache-2.0 license.
