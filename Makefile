@@ -8,10 +8,10 @@ build:
 	@echo "Building the site..."
 ifeq ($(CURRENT_BRANCH), main)
 	@echo "The environment is set to production."
-	hugo --environment production
+	hugo --printI18nWarnings --environment production
 else
 	@echo "The environment is set to staging."
-	hugo --environment staging
+	hugo --printI18nWarnings --environment staging
 endif
 
 clean:
