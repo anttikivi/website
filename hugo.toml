@@ -14,6 +14,7 @@ title = 'Antti Kivi'
 [params.contact]
   email = "antti@anttikivi.fi"
 [params.socialMedia]
+  githubLink = "https://github.com/anttikivi"
   instagramLink = "https://www.instagram.com/anttikiwi/"
   threadsLink = "https://www.threads.net/@anttikiwi"
 

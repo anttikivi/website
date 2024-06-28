@@ -52,6 +52,14 @@
             <span class="sr-only">{{- T "instagramLogoAlt" -}}</span>
             {{ partial "icons/instagram-logo.html" }}
           </a>
+          <a
+            class="hover:text-red-700 focus:text-red-700 hover:dark:text-red-400 focus:dark:text-red-400"
+            href="{{ .Site.Params.SocialMedia.GithubLink }}"
+            rel="nofollow"
+          >
+            <span class="sr-only">{{- T "githubLogoAlt" -}}</span>
+            {{ partial "icons/github-logo.html" }}
+          </a>
         </div>
         {{ if false }}
           <nav
