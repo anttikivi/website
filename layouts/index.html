@@ -3,7 +3,7 @@
   {{ $preface := $headless.Resources.Match "preface*.md" }}
   {{ range $preface }}
     <section
-      class="prose prose-lg container dark:prose-invert prose-a:font-normal hover:prose-a:text-red-700 focus:prose-a:text-red-700 prose-em:font-serif prose-em:font-normal prose-em:italic hover:dark:prose-a:text-red-400 focus:dark:prose-a:text-red-400"
+      class="prose prose-lg container dark:prose-invert prose-a:font-normal hover:prose-a:text-red-700 focus:prose-a:text-red-700 prose-em:ml-[0.18rem] prose-em:font-serif prose-em:font-normal prose-em:italic hover:dark:prose-a:text-red-400 focus:dark:prose-a:text-red-400"
     >
       {{ .Content }}
     </section>
