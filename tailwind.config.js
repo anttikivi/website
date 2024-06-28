@@ -40,9 +40,8 @@ export default {
       },
     },
     fontFamily: {
-      sans: ['"Open Sans"', ...defaultTheme.fontFamily.sans],
+      sans: ['"Manrope"', ...defaultTheme.fontFamily.sans],
       serif: ['"Libre Baskerville"', ...defaultTheme.fontFamily.serif],
-      display: ['"Manrope"', ...defaultTheme.fontFamily.sans],
       mono: ['"IBM Plex Mono"', ...defaultTheme.fontFamily.mono],
     },
     extend: {
