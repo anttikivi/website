@@ -12,7 +12,7 @@
       {{- T "skipToContent" -}}
     </a>
     {{ partial "header.html" . }}
-    <main class="mx-auto max-w-prose px-4 py-10" id="{{ $main }}">
+    <main id="{{ $main }}">
       {{ block "main" . }}{{ end }}
     </main>
     {{ partial "footer.html" . }}

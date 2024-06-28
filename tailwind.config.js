@@ -1,10 +1,14 @@
 import typographyPlugin from "@tailwindcss/typography";
 import colors from "tailwindcss/colors";
 import defaultTheme from "tailwindcss/defaultTheme";
+import plugin from "tailwindcss/plugin";
 
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./hugo_stats.json"],
+  corePlugins: {
+    container: false,
+  },
   theme: {
     colors: {
       current: "currentColor",
@@ -38,6 +42,9 @@ export default {
          */
         950: colors.rose["950"],
       },
+    },
+    container: {
+      center: true,
     },
     fontFamily: {
       sans: ['"Manrope"', ...defaultTheme.fontFamily.sans],
@@ -86,5 +93,26 @@ export default {
       }),
     },
   },
-  plugins: [typographyPlugin],
+  plugins: [
+    typographyPlugin,
+    plugin(({ addComponents, theme }) => {
+      addComponents({
+        ".container": Object.assign(
+          {
+            width: "100%",
+            paddingRight: theme("spacing.4"),
+            paddingLeft: theme("spacing.4"),
+          },
+          theme("container.center", false)
+            ? { marginRight: "auto", marginLeft: "auto" }
+            : {},
+          {
+            [`@media (min-width: ${theme("screens.sm")})`]: {
+              maxWidth: "48rem",
+            },
+          },
+        ),
+      });
+    }),
+  ],
 };
