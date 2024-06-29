@@ -72,7 +72,7 @@ the [`LICENSE`](LICENSE) file for more information.
 All rights are reserved for the non-code contents in this project and for the
 SVG files and code in
 [`layouts/partials/logo/logo.html`](layouts/partials/logo/logo.html) and
-[`public/favicon.svg`](public/favicon.svg). This includes documentation, images,
+[`static/favicon.svg`](static/favicon.svg). This includes documentation, images,
 texts that are shown on the website and any other non-code materials. These
 materials may not be reproduced or distributed in derivative works without
 explicit permission from the copyright holder.
