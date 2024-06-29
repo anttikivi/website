@@ -29,6 +29,6 @@ fmt:
 lint:
 	npm run prettier -- --check "**/*.{html,js?(on),md,yml}"
 	npm run stylelint "assets/**/*.css"
-	# npm run eslint .
+	npm run eslint .
 	taplo fmt --check "**/*.toml"
 	taplo check "**/*.toml"
