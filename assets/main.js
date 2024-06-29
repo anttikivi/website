@@ -75,7 +75,7 @@ let logoTl = gsap.timeline({
 });
 
 let paths = splitPaths("footer .logo path");
-let duration = 0.7;
+let duration = 1.5;
 let distance = 0;
 
 for (let i = 0; i < paths.length; i++) {
