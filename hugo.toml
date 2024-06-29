@@ -28,6 +28,7 @@ title = 'Antti Kivi'
   weight = 2
 [languages.en.params]
   description = "Communications advisor, entrepreneur, and student"
+  images = ["opengraph-image-en.png"]
   subtitle = "Communications advisor"
   switchTo = "In English"
 
@@ -39,7 +40,7 @@ title = 'Antti Kivi'
   weight = 1
 [languages.fi.params]
   description = "Viestintäasiantuntija, yrittäjä ja ylioppilas"
-  images = []
+  images = ["opengraph-image-fi.png"]
   subtitle = "Viestintäasiantuntija"
   switchTo = "Suomeksi"
 
