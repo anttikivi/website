@@ -64,3 +64,26 @@
   href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Manrope:wght@200..800&display=swap"
   rel="stylesheet"
 />
+
+{{ $bundleName := "bundle" }}
+{{ $bundle := slice }}
+{{ $bundle = $bundle | append (resources.Get "main.js") }}
+
+{{ $bundlePath := printf "js/%s.js" $bundleName }}
+{{ $bundle = $bundle | resources.Concat $bundlePath }}
+
+{{ $jsTarget := "es2015" }}
+
+{{ if hugo.IsProduction }}
+  {{ $opts := dict "target" $jsTarget "targetPath" "main.js" "minify" true "params" (dict "isDev" hugo.IsDevelopment) }}
+  {{ $script := $bundle | js.Build $opts | fingerprint }}
+  <script
+    src="{{ $script.RelPermalink }}"
+    integrity="{{ $script.Data.Integrity }}"
+    defer
+  ></script>
+{{ else }}
+  {{ $opts := dict "target" $jsTarget "params" (dict "isDev" hugo.IsDevelopment) }}
+  {{ $script := $bundle | js.Build $opts }}
+  <script src="{{ $script.RelPermalink }}" defer></script>
+{{ end }}
