@@ -10,7 +10,7 @@
         {{ range .Translations }}
           <li lang="{{ .Language.LanguageCode }}" role="menuitem">
             <a
-              class="text-green-950 hover:underline focus:underline dark:text-green-100"
+              class="text-green-950 underline hover:text-green-700 hover:no-underline focus:text-green-700 focus:no-underline dark:text-green-100 hover:dark:text-green-400 focus:dark:text-green-400"
               href="{{ .RelPermalink }}"
             >
               {{- .Language.Params.SwitchTo -}}
