@@ -21,7 +21,7 @@ title = 'Antti Kivi'
 [languages]
 
 [languages.en]
-  disabled = false
+  disabled = true
   # languageCode = "en-US"
   languageCode = "en"
   languageName = "English"
