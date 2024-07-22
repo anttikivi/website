@@ -8,7 +8,7 @@
     class="bg-gray-100 font-sans text-gray-900 subpixel-antialiased dark:bg-gray-900 dark:text-gray-100 dark:antialiased"
   >
     {{ $main := T "mainID" }}
-    <a class="sr-only focus:not-sr-only" href="{{ $main }}">
+    <a class="sr-only focus:not-sr-only" href="#{{ $main }}">
       {{- T "skipToContent" -}}
     </a>
     {{ partial "header.html" . }}
